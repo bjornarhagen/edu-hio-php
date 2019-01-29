@@ -5,9 +5,9 @@
   ];
 
   $movies = [
-    'movies/avatar' => 'Avatar',
-    'movies/movie-2' => 'Movie 2',
-    'movies/movie-3' => 'Movie 3'
+    'movies/a-quiet-place' => 'A Quiet Place',
+    'movies/deadpool-2' => 'Deadpool 2',
+    'movies/interstellar' => 'Interstellar',
   ];
 
   $pages = array_merge($pages, $movies);
