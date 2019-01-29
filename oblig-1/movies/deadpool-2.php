@@ -2,7 +2,7 @@
   $movie = [
     'name' => 'Deadpool 2',
     'slug' => 'deadpool-2',
-    'description' => 'Lorem ipsum dolor sit amet',
+    'description' => 'Foul-mouthed mutant mercenary Wade Wilson (AKA. Deadpool), brings together a team of fellow mutant rogues to protect a young boy with supernatural abilities from the brutal, time-traveling cyborg, Cable.',
     'links' => [
       'imdb' => 'https://www.imdb.com/title/tt5463162/'
     ],
