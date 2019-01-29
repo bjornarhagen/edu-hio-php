@@ -1,13 +1,13 @@
 <nav>
   <?php
-    foreach ($nav_links as $link_path => $link_name) {
-      $nav_item_classes = 'nav-item';
+    foreach ($pages as $page_path => $page_name) {
+      $classes = 'nav-item';
 
-      if ($link_path === $page_slug) {
-        $nav_item_classes = 'nav-item-current';
+      if ($page_path === $_page) {
+        $classes = 'nav-item-current';
       }
 
-      echo '<a href="' . $_path . $link_path . '" class="' . $nav_item_classes . '">' . $link_name . '</a>';
+      echo '<a href="' . $_path . $page_path . '" class="' . $classes . '">' . $page_name . '</a>';
     }
   ?>
 </nav>
