@@ -21,6 +21,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title><?= $pages[$_page] ?> | Favorite movies | Oblig 1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="<?= $_path ?>style/main.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="<?= $_path ?>css/main.css" />
 </head>
 <body>
