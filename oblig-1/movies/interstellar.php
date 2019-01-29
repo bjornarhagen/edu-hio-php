@@ -1,15 +1,15 @@
 <?php
   $movie = [
-    'name' => 'Avatar',
-    'slug' => 'avatar',
+    'name' => 'Interstellar',
+    'slug' => 'interstellar',
     'description' => 'Lorem ipsum dolor sit amet',
     'links' => [
-      'imdb' => 'https://www.imdb.com/title/tt0499549/'
+      'imdb' => 'https://www.imdb.com/title/tt0816692/'
     ],
     'cast' => [
       'lead' => [
-        'name_real' => 'Sam Worthington',
-        'name_role' => 'Jake Sully'
+        'name_real' => 'Matthew McConaughey',
+        'name_role' => 'Cooper'
       ]
     ]
   ];
