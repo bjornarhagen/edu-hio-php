@@ -13,6 +13,8 @@
   $pages = array_merge($pages, $movies);
 
   $_path = '/oblig-1/'; // Path to root directory
+
+  $body_class = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $_page)));
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,4 +25,4 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="<?= $_path ?>css/main.css" />
 </head>
-<body>
+<body class="<?= $body_class ?>">

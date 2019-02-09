@@ -11,15 +11,32 @@ html {
 
 body {
   margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  background-color: #fff;
 }
 
+/* General */
+h1, h2, h3 {
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+}
+
+strong, button, .button {
+  font-weight: 400;
+}
+
+/* Navigation */
 nav {
-  margin: 0 0 0 auto;
+  margin: 0 auto;
+  padding: 1em 2em 0;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  max-width: 36rem;
+  max-width: 60rem;
   background-color: transparent;
+  text-transform: uppercase;
 }
 
 nav .nav-item {
@@ -39,66 +56,48 @@ nav .nav-item.nav-item-current.nav-item-index {
   display: none;
 }
 
-.page-movie::before {
-  content: ' ';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 36em;
-  z-index: -1;
+nav .nav-item:first-child {
+  font-weight: 400;
 }
 
-.page-movie article {
-  position: relative;
-  display: flex;
-  width: 100%;
-  max-width: 60em;
-  margin: 0 auto;
+@media screen and (min-width: 48em) {
+  nav {
+    flex-direction: row;
+  }
+
+  nav .nav-item:first-child {
+    margin-right: auto;
+    margin-left: 0;
+  }
+
+  nav .nav-item:last-child {
+    margin-right: 0;
+  }
 }
 
-.movie-info {
-  padding: 4em 0 0 0em;
-  position: relative;
-  flex-grow: 1;
-}
-
-.movie-info h1 {
-  font-size: 7em;
-  margin: 0 auto 1rem;
-  line-height: 1em;
-  position: absolute;
-  right: 0;
-  white-space: nowrap;
-  font-family: serif;
-}
-
-.movie-info p {
-  font-size: 1.4em;
-  font-family: sans-serif;
-}
-
-.movie-info > p {
-  margin-top: 8em;
-}
-
-.movie-poster {
-  width: auto;
-  height: 36em;
-  margin: 4em 2em 0 auto;
-  box-shadow: 0 3rem 4em -2rem rgba(0, 0, 100, 0.3);
-}
-
+/* Buttons */
 .button-wrapper {
-  position: absolute;
-  bottom: 2em;
-  right: 0;
-  width: 125%;
   padding: 2em;
   color: #000;
   background-color: white;
   box-shadow: 0 2rem 3rem -1rem rgba(0, 0, 100, 0.3)
+}
+
+@media screen and (min-width: 48em) {
+  .button-wrapper {
+    position: absolute;
+    bottom: 3rem;
+    right: 0;
+    width: 125%;
+    color: #000;
+    transition-duration: 250ms;
+    transition-property: box-shadow;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  .button-wrapper:hover {
+    box-shadow: 0 2rem 2rem -1rem rgba(0, 0, 100, 0.3)
+  }
 }
 
 .button {
@@ -108,33 +107,162 @@ nav .nav-item.nav-item-current.nav-item-index {
   background-color: #F5C518;
   text-decoration: none;
   display: inline-block;
-  font-family: sans-serif;
-  font-weight: 700;
+  text-transform: uppercase;
 }
 
+.button:hover,
+.button:focus {
+  background-color: #ffd700;
+}
+
+/* Movies */
+main::before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 36em;
+  z-index: -1;
+  background-color: #F5C518;
+  background-image: linear-gradient(135deg, #F5C518, #ffd700);
+}
+
+.page-movie article {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 1em 2em 4em;
+}
+
+.movie-info {
+  padding: 2em 0 0;
+  position: relative;
+  flex-grow: 1;
+}
+
+.movie-info h1 {
+  font-size: 2em;
+  margin: 0 auto 1rem;
+  line-height: 1em;
+}
+
+.movie-info p {
+  font-size: 1.2em;
+  color: #000;
+}
+
+.movie-info > p {
+  margin-top: 1em;
+}
+
+.movie-poster {
+  width: 100%;
+  margin: 0 auto 0;
+  height: auto;
+  box-shadow: 0 3rem 4em -2rem rgba(0, 0, 100, 0.3);
+  background-color: #ccc;
+}
+
+@media screen and (min-width: 48em) {
+  .page-movie article {
+    flex-direction: row;
+  }
+
+  .movie-info {
+    padding: 8em 0 0;
+  }
+
+  .movie-info h1 {
+    font-size: 6.6em;
+    position: absolute;
+    right: 0;
+    white-space: nowrap;
+  }
+
+  .movie-info > p {
+    margin-top: 8em;
+  }
+
+  .movie-poster {
+    width: auto;
+    height: 36em;
+    margin: 6em 2em 0 auto;
+    transition-duration: 250ms, 500ms;
+    transition-property: transform, box-shadow;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  .movie-poster:hover {
+    transform: scale(1.01);
+    box-shadow: 0 3rem 4em -1rem rgba(0, 0, 100, 0.3);
+  }
+}
+
+/* Index */
+body.index {
+  text-align: center;
+}
+
+body.index h1 {
+  margin-top: 3em;
+}
+
+body.index nav .nav-item {
+  color: #000;
+}
+
+/* Induvidual movies */
 #movie-a-quiet-place::before {
   background-color: #434343;
-  background-image: linear-gradient(135deg, #434343, black);
+  background-image: linear-gradient(135deg, #000, #434343);
 }
 
 #movie-a-quiet-place {
-  color: #fff;
+  color: #434343;
 }
 
 #movie-deadpool-2::before {
   background-color: #ff0844;
-  background-image: linear-gradient(-45deg, #ff0844, #ffb199);
+  background-image: linear-gradient(135deg, #ff0844, #ffb199);
 }
 
 #movie-deadpool-2 {
-  color: #000;
+  color: #ff0844;
 }
 
 #movie-interstellar::before {
   background-color: #3d99be;
-  background-image: linear-gradient(-45deg, #1e3c72, #2a5298);
+  background-image: linear-gradient(135deg, #1e3c72, #2a5298);
 }
 
 #movie-interstellar {
-  color: #fff;
+  color: #3d99be;
+}
+
+@media screen and (min-width: 48em) {
+  #movie-a-quiet-place,
+  #movie-a-quiet-place p {
+    color: #fff;
+  }
+
+  #movie-deadpool-2,
+  #movie-deadpool-2 p {
+    color: #000;
+  }
+
+  #movie-interstellar,
+  #movie-interstellar p {
+    color: #fff;
+  }
+
+  #movie-a-quiet-place .button-wrapper p,
+  #movie-deadpool-2 .button-wrapper p,
+  #movie-interstellar .button-wrapper p {
+    color: #000;
+  }
 }
