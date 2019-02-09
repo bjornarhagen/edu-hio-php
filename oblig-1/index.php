@@ -5,8 +5,8 @@
   require('partials/nav.php');
 ?>
 <main>
-  <h1>Filmarkiv</h1>
-  <p>Velg en film</p>
+  <h1>Film Archive</h1>
+  <p>Pick a film</p>
 </main>
 <?php
   require('partials/footer.php');

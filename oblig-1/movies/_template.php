@@ -10,7 +10,7 @@
             echo '<p><strong>' . ucfirst($role) . ':</strong> ' . $person['name_real'] . ' as ' . $person['name_role'] . '</p>';
           }
         ?>
-        <a href="<?= $movie['links']['imdb'] ?>" class="button" target="_blank" rel="noreferrer nofollow noopener">Les mer på IMDB</a>
+        <a href="<?= $movie['links']['imdb'] ?>" class="button" target="_blank" rel="noreferrer nofollow noopener">Read more on IMDb</a>
       </div>
     </div>
   </article>
