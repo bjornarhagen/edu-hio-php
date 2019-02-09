@@ -13,11 +13,3 @@
       ]
     ]
   ];
-
-  $_page = 'movies/' . $movie['slug'];
-
-  require('../partials/head.php');
-  require('../partials/nav.php');
-  require('_template.php');
-  require('../partials/footer.php');
-?>

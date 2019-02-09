@@ -52,10 +52,6 @@ nav .nav-item.nav-item-current {
   text-decoration: underline;
 }
 
-nav .nav-item.nav-item-current.nav-item-index {
-  display: none;
-}
-
 nav .nav-item:first-child {
   font-weight: 400;
 }
@@ -226,24 +222,28 @@ footer a:focus {
 }
 
 /* Index */
-body.index main {
+body.index-php main {
   max-width: 60rem;
   width: 100%;
   margin: 0 auto;
   padding: 1em 2em;
 }
 
-body.index nav .nav-item {
+body.index-php nav .nav-item {
   color: #000;
   margin: 0;
 }
 
-body.index h1 {
+body.index-php nav .nav-item:first-child {
+  display: none;
+}
+
+body.index-php h1 {
   margin: 1em 0 1rem;
   font-size: 5em;
 }
 
-body.index main p {
+body.index-php main p {
   font-size: 1.4em;
 }
 

@@ -3,11 +3,17 @@
     foreach ($pages as $page_path => $page_name) {
       $classes = 'nav-item';
 
-      if ($page_path === $_page . '.php') {
+      // Check if current page is active
+      if ($page_path === $_page) {
         $classes .= ' nav-item-current' . ' nav-item-' . $_page;
       }
 
-      echo '<a href="' . $_path . $page_path . '" class="' . $classes . '">' . $page_name . '</a>';
+      // Check if page is a movie
+      if (isset($movies[$page_path])) {
+        echo '<a href="' . $_path . '?movie=' . $page_path . '" class="' . $classes . '">' . $page_name . '</a>';
+      } else {
+        echo '<a href="' . $_path . $page_path . '" class="' . $classes . '">' . $page_name . '</a>';
+      }
     }
   ?>
 </nav>
