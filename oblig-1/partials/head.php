@@ -1,13 +1,13 @@
 <?php
   // Define navigation links
   $pages = [
-    'index' => 'Filmarkiv'
+    'index.php' => 'Filmarkiv'
   ];
 
   $movies = [
-    'movies/a-quiet-place' => 'A Quiet Place',
-    'movies/deadpool-2' => 'Deadpool 2',
-    'movies/interstellar' => 'Interstellar',
+    'movies/a-quiet-place.php' => 'A Quiet Place',
+    'movies/deadpool-2.php' => 'Deadpool 2',
+    'movies/interstellar.php' => 'Interstellar',
   ];
 
   $pages = array_merge($pages, $movies);

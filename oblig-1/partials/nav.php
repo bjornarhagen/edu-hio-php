@@ -3,7 +3,7 @@
     foreach ($pages as $page_path => $page_name) {
       $classes = 'nav-item';
 
-      if ($page_path === $_page) {
+      if ($page_path === $_page . '.php') {
         $classes .= ' nav-item-current' . ' nav-item-' . $_page;
       }
 
