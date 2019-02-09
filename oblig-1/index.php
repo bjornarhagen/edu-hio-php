@@ -2,11 +2,12 @@
   $_page = 'index';
 
   require('partials/head.php');
+  require('partials/nav.php');
 ?>
 <main>
-  <h1>Velg en film</h1>
+  <h1>Filmarkiv</h1>
+  <p>Velg en film</p>
 </main>
 <?php
-  require('partials/nav.php');
   require('partials/footer.php');
 ?>
