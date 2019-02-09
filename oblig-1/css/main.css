@@ -75,6 +75,23 @@ nav .nav-item:first-child {
   }
 }
 
+/* Footer */
+footer {
+  padding: 1em 2em;
+  background-color: #fff;
+  text-align: center;
+}
+
+footer a {
+  color: #705805;
+  text-decoration: none;
+}
+
+footer a:hover,
+footer a:focus {
+  color: #b99208;
+  text-decoration: underline;
+}
 /* Buttons */
 .button-wrapper {
   padding: 2em;
