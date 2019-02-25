@@ -345,9 +345,11 @@ body.index .movies .movie-info h2 a {
 }
 
 .dices .dice-current {
+.dices .dice-current,
+.dices .dice-current:hover {
   opacity: 1;
   flex-grow: 2;
-  max-width: 100%;
+  max-width: 22.5%;
 }
 
 #movie-picker select {
