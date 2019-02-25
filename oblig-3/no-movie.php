@@ -11,10 +11,10 @@
         <div class="dices">
           <?php
             for ($i=1; $i <= 6; $i++) {
-              $dice_html = '<img src="' . $path . 'images/graphics/dice-' . $i . '.png" alt="Rating ' . $i . '">';
+              $dice_html = '<img src="' . $_path . 'images/graphics/dice-' . $i . '.png" alt="Rating ' . $i . '">';
 
               if ($i == $movie['rating']) {
-                $dice_html = '<img class="dice-current" src="' . $path . 'images/graphics/dice-' . $i . '.png" alt="Rating ' . $i . '">';
+                $dice_html = '<img class="dice-current" src="' . $_path . 'images/graphics/dice-' . $i . '.png" alt="Rating ' . $i . '">';
               }
 
               echo $dice_html;
