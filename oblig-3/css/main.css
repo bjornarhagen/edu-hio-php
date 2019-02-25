@@ -11,18 +11,27 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   background-color: #fff;
 }
 
 /* General */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: 700;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
 
-strong, button, .button {
+img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+strong,
+button,
+.button {
   font-weight: 400;
 }
 
@@ -59,17 +68,6 @@ nav .nav-item:first-child {
   font-weight: 400;
 }
 
-nav #movie-picker button {
-  color: #fff;
-  border-bottom: 2px solid #ffd700;
-}
-
-nav #movie-picker button:hover,
-nav #movie-picker button:focus {
-  color: #000;
-  background-color: #ffd700;
-}
-
 @media screen and (min-width: 48em) {
   nav {
     flex-direction: row;
@@ -91,7 +89,7 @@ main {
 }
 
 main::before {
-  content: ' ';
+  content: " ";
   position: absolute;
   top: 0;
   left: 0;
@@ -99,8 +97,8 @@ main::before {
   width: 100%;
   height: 36em;
   z-index: -1;
-  background-color: #F5C518;
-  background-image: linear-gradient(135deg, #F5C518, #ffd700);
+  background-color: #f5c518;
+  background-image: linear-gradient(135deg, #f5c518, #ffd700);
 }
 
 /* Footer */
@@ -126,7 +124,7 @@ footer a:focus {
   padding: 2em;
   color: #000;
   background-color: white;
-  box-shadow: 0 2rem 3rem -1rem rgba(0, 0, 100, 0.3)
+  box-shadow: 0 2rem 3rem -1rem rgba(0, 0, 100, 0.3);
 }
 
 #dice {
@@ -163,7 +161,7 @@ footer a:focus {
   }
 
   .button-wrapper:hover {
-    box-shadow: 0 2rem 2rem -1rem rgba(0, 0, 100, 0.3)
+    box-shadow: 0 2rem 2rem -1rem rgba(0, 0, 100, 0.3);
   }
 }
 
@@ -171,7 +169,7 @@ footer a:focus {
   padding: 1em 2em;
   border: none;
   color: #000;
-  background-color: #F5C518;
+  background-color: #f5c518;
   text-decoration: none;
   display: inline-block;
 }
@@ -192,28 +190,28 @@ footer a:focus {
   padding: 1em 2em 4em;
 }
 
-.movie-info {
+.page-movie .movie-info {
   padding: 2em 0 0;
   position: relative;
   flex-grow: 1;
 }
 
-.movie-info h1 {
+.page-movie .movie-info h1 {
   font-size: 2em;
   margin: 0 auto 1rem;
   line-height: 1em;
 }
 
-.movie-info p {
+.page-movie .movie-info p {
   font-size: 1.2em;
   color: #000;
 }
 
-.movie-info > p {
+.page-movie .movie-info > p {
   margin-top: 1em;
 }
 
-.movie-poster {
+.page-movie .movie-poster {
   width: 100%;
   margin: 0 auto 0;
   height: auto;
@@ -226,22 +224,22 @@ footer a:focus {
     flex-direction: row;
   }
 
-  .movie-info {
+  .page-movie .movie-info {
     padding: 8em 0 0;
   }
 
-  .movie-info h1 {
+  .page-movie .movie-info h1 {
     font-size: 6.6em;
     position: absolute;
     right: 0;
     white-space: nowrap;
   }
 
-  .movie-info > p:first-of-type {
+  .page-movie .movie-info > p:first-of-type {
     margin-top: 6.5em;
   }
 
-  .movie-poster {
+  .page-movie .movie-poster {
     width: auto;
     height: 36em;
     margin: 6em 2em 0 auto;
@@ -250,7 +248,7 @@ footer a:focus {
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 
-  .movie-poster:hover {
+  .page-movie .movie-poster:hover {
     transform: scale(1.01);
     box-shadow: 0 3rem 4em -1rem rgba(0, 0, 100, 0.3);
   }
@@ -261,25 +259,95 @@ body.index main {
   max-width: 60rem;
   width: 100%;
   margin: 0 auto;
-  padding: 1em 2em;
 }
 
 body.index nav .nav-item {
   color: #000;
-  margin: 0;
 }
 
 body.index nav .nav-item:first-child {
-  display: none;
+  text-decoration: underline;
 }
 
 body.index h1 {
   margin: 1em 0 1rem;
   font-size: 5em;
+  padding: 1rem 2rem;
 }
 
-body.index main p {
-  font-size: 1.4em;
+body.index .movies {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2em;
+  grid-column: auto;
+  width: 100%;
+  max-width: 100%;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 0 0 2rem 2rem;
+}
+
+body.index .movies .movie {
+  background-color: #fff;
+  box-shadow: 0 2rem 3rem -1.5rem rgba(0, 0, 100, 0.1);
+  min-width: 12.5em;
+}
+
+@media screen and (min-width: 48em) {
+  body.index .movies {
+    overflow-y: visible;
+    overflow-x: visible;
+    padding: 0 2rem 5rem;
+  }
+
+  body.index .movies .movie {
+    transition-duration: 250ms, 500ms;
+    transition-property: transform, box-shadow;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    min-width: 0;
+  }
+
+  body.index .movies .movie:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2rem 3rem -1rem rgba(0, 0, 100, 0.2);
+  }
+
+  body.index .movies .movie:active {
+    transition-duration: 100ms, 250ms;
+    transform: scale(1);
+  }
+}
+
+body.index .movies .movie-info {
+  padding: 1em 2em;
+}
+
+body.index .movies .movie-info h2 {
+  font-size: 1.25em;
+}
+
+body.index .movies .movie-info h2 a {
+  color: #000;
+  text-decoration: none;
+}
+
+.dices {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+
+.dices img {
+  opacity: 0.5;
+  flex-grow: 1;
+  max-width: 15.5%;
+}
+
+.dices .dice-current {
+  opacity: 1;
+  flex-grow: 2;
+  max-width: 100%;
 }
 
 #movie-picker select {
