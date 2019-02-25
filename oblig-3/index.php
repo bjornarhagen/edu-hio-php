@@ -1,7 +1,7 @@
 <?php
   session_start();
 
-  $_path = '/oblig-2/'; // Path to root directory
+  $_path = '/oblig-3/'; // Path to root directory
   $_page = 'index';
 
   require('movies/db.php');
@@ -9,8 +9,8 @@
   $movie_selected = false;
 
   // Get selected movie
-  if (isset($_SESSION['movie']) && $_SESSION['movie'] != null) {
-    $movie_slug = htmlspecialchars($_SESSION['movie']);
+  if (isset($_GET['movie']) && $_GET['movie'] != null) {
+    $movie_slug = htmlspecialchars($_GET['movie']);
 
     if (isset($movies[$movie_slug])) {
       $movie_selected = true;
@@ -20,9 +20,9 @@
   }
 
   require('partials/head.php');
+  require('partials/nav.php');
 
   if ($movie_selected) {
-    require('partials/nav.php');
     require('movies/template.php');
   } else {
     require('no-movie.php');
