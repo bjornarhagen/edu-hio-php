@@ -344,7 +344,10 @@ body.index .movies .movie-info h2 a {
   max-width: 15.5%;
 }
 
-.dices .dice-current {
+.dices img:hover {
+  opacity: 0.75;
+}
+
 .dices .dice-current,
 .dices .dice-current:hover {
   opacity: 1;
